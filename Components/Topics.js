@@ -8,10 +8,11 @@ const API_URL = "https://gist.githubusercontent.com/Pinois/93afbc4a061352a0c7033
 function Topics() {
   const [topics, setTopics] = useState([]);
   const [votes, setVotes] = useState(0);
+  const [archeive, setArcheive] = useState([]);
   const [addTopic, setAddTopic] = useState({
     upvotes: 0,
 		downvotes: 0,
-		disussedOn: '',
+		discussedOn: '',
 		title: '',
 		id: Date.now(),
   });
@@ -42,7 +43,7 @@ function Topics() {
 
   function handleDeleteTopic(e) {
   const id = e.target.id;
-  const filteredTopic = topics.filter(topic => topic.id !== id);
+  const filteredTopic = topics.filter(topic => topic.id != id);
   setTopics(filteredTopic)
 }
 
@@ -55,6 +56,14 @@ function handleAddTopics(e) {
   setAddTopic({
     ...addTopic, [e.target.name] : e.target.value
   })
+}
+const [archiveT, setArchiveT] = useState("");
+function archievedTopics(e) {
+  const id = e.target.id;
+  const topicToArchive = topics.find(topic => topic.id == id);
+  const date=topicToArchive.discussedOn = new Date();
+  setTopics([...topics]);
+  console.log(topicToArchive.discussedOn, id, topics);
 }
 
   return (
@@ -72,6 +81,7 @@ function handleAddTopics(e) {
                         {...topic}
                         upVotes={handleUpvotes}
                         downVotes={handleDownVotes}
+                        archeive={archievedTopics}
                       />)
     }
       <h2>Past topics</h2>
@@ -88,7 +98,6 @@ function handleAddTopics(e) {
                         upVotes={handleUpvotes}
                         downVotes={handleDownVotes}
                         deleteTopic={handleDeleteTopic}
-
                       />)
       }
     </>

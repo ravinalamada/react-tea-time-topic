@@ -1,6 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+span{
+  font-size: 25px;
 }
 
 * {
@@ -20,7 +27,8 @@ button {
   justify-content: space-between;
 }
 
-.wrapper {
+.wrapper,
+.container {
   background: #FFFFFE;
   border-radius: 5px;
   padding: 1rem;
@@ -38,11 +46,21 @@ button {
   border-color: transparent;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .button {
   background-color: #FAAE2C;
   border-radius: 50%;
   width: 80px;
   height: 80px;
+}
+
+.submit{
+  background-color: #FAAE2C;
 }
 
 span {
