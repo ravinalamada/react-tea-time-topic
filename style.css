@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 1rem;
+  background: #E5E5E5;
+  color: #00473E;
+}
+
+.wrapper,
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.wrapper {
+  background: #FFFFFE;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.pastTopics,
+.nextTopicis {
+  margin-top: 25px;
+}
+
+button {
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button {
+  background-color: #FAAE2C;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+span {
+  color: #D8779A;;
+}
+
+svg {
+  width: 48px;
+  height: 48px;
+}
