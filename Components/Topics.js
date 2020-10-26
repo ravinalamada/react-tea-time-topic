@@ -8,7 +8,7 @@ const API_URL = "https://gist.githubusercontent.com/Pinois/93afbc4a061352a0c7033
 function Topics() {
   const [topics, setTopics] = useState([]);
   const [votes, setVotes] = useState(0);
-  const [archeive, setArcheive] = useState([]);
+  const [archiveT, setArcheiveT] = useState("");
   const [addTopic, setAddTopic] = useState({
     upvotes: 0,
 		downvotes: 0,
@@ -57,7 +57,7 @@ function handleAddTopics(e) {
     ...addTopic, [e.target.name] : e.target.value
   })
 }
-const [archiveT, setArcheiveT] = useState("");
+
 function archievedTopics(e) {
   const id = e.target.id;
   const topicToArchive = topics.find(topic => topic.id == id);
