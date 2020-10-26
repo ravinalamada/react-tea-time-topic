@@ -62,8 +62,8 @@ function archievedTopics(e) {
   const id = e.target.id;
   const topicToArchive = topics.find(topic => topic.id == id);
   const date = topicToArchive.discussedOn = Date.now();
-  const convertedDate = date.toLocaleString();
-  setArcheiveT(date);
+  // const convertedDate = date.toLocaleString();
+  setArcheiveT(convertedDate);
   console.log(topicToArchive.discussedOn, id, topics);
 }
 
