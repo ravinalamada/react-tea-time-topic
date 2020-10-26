@@ -30030,9 +30030,9 @@ function Topics() {
   function archievedTopics(e) {
     const id = e.target.id;
     const topicToArchive = topics.find(topic => topic.id == id);
-    const date = topicToArchive.discussedOn = Date.now();
-    const convertedDate = date.toLocaleString();
-    setArcheiveT(convertedDate);
+    const date = topicToArchive.discussedOn = Date.now(); // const convertedDate = date.toLocaleString();
+
+    setArcheiveT(date);
     console.log(topicToArchive.discussedOn, id, topics);
   }
 
@@ -30128,7 +30128,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61962" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61998" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
