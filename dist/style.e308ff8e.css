@@ -4,6 +4,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: normal;
+  background: #E5E5E5;
+  color: #00473E;
 }
 
 span{
@@ -16,8 +18,7 @@ span{
 
 .main {
   padding: 1rem;
-  background: #E5E5E5;
-  color: #00473E;
+
 }
 
 .wrapper,
@@ -27,7 +28,8 @@ button {
   justify-content: space-between;
 }
 
-.wrapper,
+.nextTopicis,
+.pastTopics,
 .container {
   background: #FFFFFE;
   border-radius: 5px;
@@ -37,6 +39,11 @@ button {
 .pastTopics,
 .nextTopicis {
   margin-top: 25px;
+}
+
+.date {
+  text-align: center;
+  color: #FAAE2C;
 }
 
 button {
@@ -59,8 +66,20 @@ button {
   height: 80px;
 }
 
+input{
+  background-color: #E5E5E5;
+  flex-basis: 70%;
+  border-radius: 5px;
+}
+
 .submit{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: #FAAE2C;
+  font-size: 20px;
+  border-radius: 5px;
 }
 
 span {
@@ -70,6 +89,14 @@ span {
 svg {
   width: 48px;
   height: 48px;
+}
+
+@media (min-width: 800px) {
+  .main{
+    max-width: 800px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
 }
 
 

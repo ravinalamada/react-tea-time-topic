@@ -29,14 +29,14 @@ function Topics() {
 
   function handleUpvotes(e) {
     const id = e.target.id;
-    const findId = topics.find(topic => topic.id === id);
+    const findId = topics.find(topic => topic.id == id);
     const upVotes = findId.upvotes++;
     setVotes(upVotes);
   }
 
   function handleDownVotes(e) {
     const id = e.target.id;
-    const findId = topics.find(topic => topic.id === id);
+    const findId = topics.find(topic => topic.id == id);
     const downVotes = findId.downvotes++;
     setVotes(downVotes);
   }
@@ -57,12 +57,13 @@ function handleAddTopics(e) {
     ...addTopic, [e.target.name] : e.target.value
   })
 }
-const [archiveT, setArchiveT] = useState("");
+const [archiveT, setArcheiveT] = useState("");
 function archievedTopics(e) {
   const id = e.target.id;
   const topicToArchive = topics.find(topic => topic.id == id);
-  const date=topicToArchive.discussedOn = new Date();
-  setTopics([...topics]);
+  const date = topicToArchive.discussedOn = Date.now();
+  const convertedDate = date.toLocaleString();
+  setArcheiveT(date);
   console.log(topicToArchive.discussedOn, id, topics);
 }
 
@@ -75,7 +76,7 @@ function archievedTopics(e) {
         const ratioB = topicB.upvotes - topicB.downvotes;
         return ratioB - ratioA;
       })
-        .filter(topic => topic.discussedOn !== '')
+        .filter(topic => topic.discussedOn === '')
         .map(topic => <NextTopics
                         key={topic.id}
                         {...topic}
@@ -91,7 +92,7 @@ function archievedTopics(e) {
           const ratioB = topicB.upvotes - topicB.downvotes;
           return ratioB - ratioA;
         })
-        .filter(topic => topic.discussedOn === '')
+        .filter(topic => topic.discussedOn !== '')
         .map(topic => <PastTopics
                         key={topic.id}
                         {...topic}

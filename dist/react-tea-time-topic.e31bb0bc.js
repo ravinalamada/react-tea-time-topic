@@ -29939,7 +29939,9 @@ function PastTopics(props) {
     strokeLinejoin: "round",
     strokeWidth: "2",
     d: "M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"
-  }))), /*#__PURE__*/_react.default.createElement("p", null, "Discussed on ", props.discussedOn)));
+  })))), /*#__PURE__*/_react.default.createElement("p", {
+    className: "date"
+  }, "Discussed on ", props.discussedOn));
 }
 
 var _default = PastTopics;
@@ -29994,14 +29996,14 @@ function Topics() {
 
   function handleUpvotes(e) {
     const id = e.target.id;
-    const findId = topics.find(topic => topic.id === id);
+    const findId = topics.find(topic => topic.id == id);
     const upVotes = findId.upvotes++;
     setVotes(upVotes);
   }
 
   function handleDownVotes(e) {
     const id = e.target.id;
-    const findId = topics.find(topic => topic.id === id);
+    const findId = topics.find(topic => topic.id == id);
     const downVotes = findId.downvotes++;
     setVotes(downVotes);
   }
@@ -30023,13 +30025,14 @@ function Topics() {
     });
   }
 
-  const [archiveT, setArchiveT] = (0, _react.useState)("");
+  const [archiveT, setArcheiveT] = (0, _react.useState)("");
 
   function archievedTopics(e) {
     const id = e.target.id;
     const topicToArchive = topics.find(topic => topic.id == id);
-    const date = topicToArchive.discussedOn = new Date();
-    setTopics([...topics]);
+    const date = topicToArchive.discussedOn = Date.now();
+    const convertedDate = date.toLocaleString();
+    setArcheiveT(date);
     console.log(topicToArchive.discussedOn, id, topics);
   }
 
@@ -30040,7 +30043,7 @@ function Topics() {
     const ratioA = topicA.upvotes - topicA.downvotes;
     const ratioB = topicB.upvotes - topicB.downvotes;
     return ratioB - ratioA;
-  }).filter(topic => topic.discussedOn !== '').map(topic => /*#__PURE__*/_react.default.createElement(_NextTopics.default, _extends({
+  }).filter(topic => topic.discussedOn === '').map(topic => /*#__PURE__*/_react.default.createElement(_NextTopics.default, _extends({
     key: topic.id
   }, topic, {
     upVotes: handleUpvotes,
@@ -30050,7 +30053,7 @@ function Topics() {
     const ratioA = topicA.upvotes - topicA.downvotes;
     const ratioB = topicB.upvotes - topicB.downvotes;
     return ratioB - ratioA;
-  }).filter(topic => topic.discussedOn === '').map(topic => /*#__PURE__*/_react.default.createElement(_pastTopics.default, _extends({
+  }).filter(topic => topic.discussedOn !== '').map(topic => /*#__PURE__*/_react.default.createElement(_pastTopics.default, _extends({
     key: topic.id
   }, topic, {
     upVotes: handleUpvotes,
@@ -30125,7 +30128,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53190" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56619" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
