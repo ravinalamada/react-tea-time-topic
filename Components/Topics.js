@@ -50,11 +50,12 @@ function Topics() {
 function handleSubmit(e){
   e.preventDefault();
   setTopics([...topics, addTopic]);
+  e.currentTarget.reset();
 }
 
 function handleAddTopics(e) {
   setAddTopic({
-    ...addTopic, [e.target.name] : e.target.value
+    ...addTopic, [e.target.name] : e.target.value,
   })
 }
 
