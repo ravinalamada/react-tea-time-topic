@@ -29787,10 +29787,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Form(props) {
   return /*#__PURE__*/_react.default.createElement("form", {
     onSubmit: props.onSubmit
-  }, /*#__PURE__*/_react.default.createElement("h2", null, "Add a topic"), /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Add a topic"), /*#__PURE__*/_react.default.createElement("fieldset", {
+    className: "form__fieldset"
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "text",
+    className: "form__input",
+    placeholder: "add a new topic",
     name: "title",
     value: props.addTopic,
     onChange: props.addNewTopics
@@ -29814,61 +29816,33 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Display next topics data
 function NextTopics(props) {
   return /*#__PURE__*/_react.default.createElement("section", {
     className: "nextTopicis"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
-  }, /*#__PURE__*/_react.default.createElement("p", null, props.title), /*#__PURE__*/_react.default.createElement("button", {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "title"
+  }, props.title), /*#__PURE__*/_react.default.createElement("button", {
     id: props.id,
-    onClick: props.archeive
-  }, /*#__PURE__*/_react.default.createElement("svg", {
-    id: props.id,
-    className: "w-6 h-6",
-    fill: "none",
-    stroke: "#D8779A",
-    viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "2",
-    d: "M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
-  })))), /*#__PURE__*/_react.default.createElement("div", {
+    onClick: props.archeive,
+    className: "archieve"
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "button",
+    className: "button btn--upvotes",
     id: props.id,
     onClick: props.upVotes
-  }, /*#__PURE__*/_react.default.createElement("span", null, props.upvotes), /*#__PURE__*/_react.default.createElement("svg", {
-    id: props.id,
-    className: "w-6 h-6",
-    fill: "none",
-    stroke: "#00473E",
-    viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "2",
-    d: "M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"
-  }))), /*#__PURE__*/_react.default.createElement("button", {
-    className: "button",
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "votes"
+  }, props.upvotes)), /*#__PURE__*/_react.default.createElement("button", {
+    className: "button btn--downvotes",
     id: props.id,
     onClick: props.downVotes
-  }, /*#__PURE__*/_react.default.createElement("span", null, props.downvotes), /*#__PURE__*/_react.default.createElement("svg", {
-    id: props.id,
-    className: "w-6 h-6",
-    fill: "none",
-    stroke: "#00473E",
-    viewBox: "0 0 24 24",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "2",
-    d: "M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5"
-  })))));
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "votes"
+  }, props.downvotes))));
 }
 
 var _default = NextTopics;
@@ -29885,27 +29859,19 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// Display the past topics data
 function PastTopics(props) {
   return /*#__PURE__*/_react.default.createElement("section", {
     className: "pastTopics"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
-  }, /*#__PURE__*/_react.default.createElement("p", null, props.title), /*#__PURE__*/_react.default.createElement("button", {
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "title"
+  }, props.title), /*#__PURE__*/_react.default.createElement("button", {
     id: props.id,
-    onClick: props.deleteTopic
-  }, /*#__PURE__*/_react.default.createElement("svg", {
-    id: props.id,
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 24 24",
-    fill: "black",
-    width: "18px",
-    height: "18px"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "white"
-  }), /*#__PURE__*/_react.default.createElement("path", {
-    d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-  })))), /*#__PURE__*/_react.default.createElement("div", {
+    onClick: props.deleteTopic,
+    className: "delete"
+  })), /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: "button",
@@ -29982,7 +29948,7 @@ function Topics() {
     discussedOn: '',
     title: '',
     id: Date.now()
-  });
+  }); // Fetch the data from API
 
   async function fetchTopics() {
     const res = await fetch(API_URL);
@@ -29992,48 +29958,54 @@ function Topics() {
 
   (0, _react.useEffect)(() => {
     fetchTopics();
-  }, []);
+  }, []); // Increments likes
 
   function handleUpvotes(e) {
-    const id = e.target.id;
+    const id = e.target.id; // Find topics'id that is going to be compared with
+
     const findId = topics.find(topic => topic.id == id);
     const upVotes = findId.upvotes++;
     setVotes(upVotes);
-  }
+  } // Decrement likes
+
 
   function handleDownVotes(e) {
-    const id = e.target.id;
+    const id = e.target.id; // Find topics'id that is going to be compared with
+
     const findId = topics.find(topic => topic.id == id);
     const downVotes = findId.downvotes++;
     setVotes(downVotes);
-  }
+  } // Delete the items from the topic lists
+
 
   function handleDeleteTopic(e) {
     const id = e.target.id;
     const filteredTopic = topics.filter(topic => topic.id != id);
     setTopics(filteredTopic);
-  }
+  } // add a new topics
+
 
   function handleSubmit(e) {
     e.preventDefault();
     setTopics([...topics, addTopic]);
     e.currentTarget.reset();
-  }
+  } // Push the new topic in the lists
+
 
   function handleAddTopics(e) {
     setAddTopic({ ...addTopic,
       [e.target.name]: e.target.value
     });
-  }
+  } // Set the date when the item is discussed
+
 
   function archievedTopics(e) {
     const id = e.target.id;
     const topicToArchive = topics.find(topic => topic.id == id);
-    const date = topicToArchive.discussedOn = Date.now(); // const convertedDate = date.toLocaleString();
-
+    const date = topicToArchive.discussedOn = Date.now();
     setArcheiveT(date);
-    console.log(topicToArchive.discussedOn, id, topics);
-  }
+  } // Display the topics data
+
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Form.default, {
     addNewTopics: handleAddTopics,
@@ -30099,7 +30071,7 @@ var _App = _interopRequireDefault(require("./App/App"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App/App":"App/App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App/App":"App/App.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -30127,7 +30099,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61870" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62528" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -30303,5 +30275,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/react-tea-time-topic.e31bb0bc.js.map

@@ -8,10 +8,6 @@ body {
   color: #00473E;
 }
 
-span{
-  font-size: 25px;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -22,10 +18,12 @@ span{
 }
 
 .wrapper,
-button {
+.button,
+.form__fieldset {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: end;
 }
 
 .nextTopicis,
@@ -46,30 +44,40 @@ button {
   color: #FAAE2C;
 }
 
-button {
-  flex-direction: row-reverse;
-  align-items: center;
-  background-color: transparent;
-  border-color: transparent;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .button {
   background-color: #FAAE2C;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+  flex-direction: row-reverse;
+  align-items: center;
+  border-color: transparent;
 }
 
-input{
-  background-color: #E5E5E5;
+.button,
+.archieve {
+  background-repeat: no-repeat;
+  background-size: 48px;
+  background-position: left;
+}
+
+.form__fieldset {
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.form__input,
+.form__fieldset {
+  border-color: transparent;
+  background-color: white;
+  height: 100%;
+}
+
+.form__input {
   flex-basis: 70%;
   border-radius: 5px;
+  font-size: 18px;
 }
 
 .submit{
@@ -78,17 +86,36 @@ input{
   padding-left: 16px;
   padding-right: 16px;
   background-color: #FAAE2C;
+  border-color: transparent;
   font-size: 20px;
   border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
 }
 
-span {
-  color: #D8779A;;
+.votes {
+  font-size: 25px;
+  color: white;
 }
 
-svg {
+.btn--upvotes {
+  background-image: url('./Icons/ThumbUp.svg');
+}
+
+.btn--downvotes {
+  background-image: url('./Icons/ThumbsDown.svg');
+}
+
+.archieve {
   width: 48px;
   height: 48px;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: url('./Icons/Archieve.svg');
+}
+
+.title {
+  width: 500px;
 }
 
 @media (min-width: 800px) {
@@ -97,4 +124,15 @@ svg {
     margin-inline-start: auto;
     margin-inline-end: auto;
   }
+
+  .nextTopicis,
+  .pastTopics {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
 }

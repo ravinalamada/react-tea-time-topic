@@ -1,12 +1,12 @@
 import React from "react";
 
+// Display the past topics data
 function PastTopics(props) {
   return (
     <section className="pastTopics">
       <div className="wrapper">
-        <p>{props.title}</p>
-        <button id={props.id} onClick={props.deleteTopic}>
-          <svg id={props.id} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="white" /><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" /></svg>
+        <p className="title">{props.title}</p>
+        <button id={props.id} onClick={props.deleteTopic} className="delete">
         </button>
       </div>
       <div className="wrapper">

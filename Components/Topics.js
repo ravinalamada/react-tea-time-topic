@@ -17,6 +17,7 @@ function Topics() {
 		id: Date.now(),
   });
 
+  // Fetch the data from API
   async function fetchTopics() {
     const res = await fetch(API_URL);
     const topics = await res.json();
@@ -27,47 +28,56 @@ function Topics() {
     fetchTopics()
   }, [])
 
+  // Increments likes
   function handleUpvotes(e) {
     const id = e.target.id;
+
+    // Find topics'id that is going to be compared with
     const findId = topics.find(topic => topic.id == id);
     const upVotes = findId.upvotes++;
     setVotes(upVotes);
   }
 
+  // Decrement likes
   function handleDownVotes(e) {
     const id = e.target.id;
+
+    // Find topics'id that is going to be compared with
     const findId = topics.find(topic => topic.id == id);
     const downVotes = findId.downvotes++;
     setVotes(downVotes);
   }
 
+  // Delete the items from the topic lists
   function handleDeleteTopic(e) {
   const id = e.target.id;
   const filteredTopic = topics.filter(topic => topic.id != id);
   setTopics(filteredTopic)
 }
 
+// add a new topics
 function handleSubmit(e){
   e.preventDefault();
   setTopics([...topics, addTopic]);
   e.currentTarget.reset();
 }
 
+// Push the new topic in the lists
 function handleAddTopics(e) {
   setAddTopic({
     ...addTopic, [e.target.name] : e.target.value,
   })
 }
 
+// Set the date when the item is discussed
 function archievedTopics(e) {
   const id = e.target.id;
   const topicToArchive = topics.find(topic => topic.id == id);
   const date = topicToArchive.discussedOn = Date.now();
-  // const convertedDate = date.toLocaleString();
-  setArcheiveT(date);
-  console.log(topicToArchive.discussedOn, id, topics);
+  setArcheiveT(date)
 }
 
+  // Display the topics data
   return (
     <>
       <Form addNewTopics={handleAddTopics} onSubmit={handleSubmit}/>
